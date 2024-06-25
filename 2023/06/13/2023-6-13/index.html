@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>git工具上传使用 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="使用 Git 工具上传项目到 GitHub 全局配置 GitHub 用户名和邮箱 12bash复制代码git config --global user.name &quot;输入你的用户名&quot;git config --global user.email &quot;输入你的邮箱&quot;  对本地项目文件夹初始化 123bash复制代码git init  添加项目文件 123bash复制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git工具上传使用">
+<meta property="og:url" content="http://example.com/2023/06/13/2023-6-13/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用 Git 工具上传项目到 GitHub 全局配置 GitHub 用户名和邮箱 12bash复制代码git config --global user.name &quot;输入你的用户名&quot;git config --global user.email &quot;输入你的邮箱&quot;  对本地项目文件夹初始化 123bash复制代码git init  添加项目文件 123bash复制">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-06-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-25T08:40:57.702Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/06/13/2023-6-13/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'git工具上传使用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-25 16:40:57'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">git工具上传使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-12T16:00:00.000Z" title="Created 2023-06-13 00:00:00">2023-06-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-06-25T08:40:57.702Z" title="Updated 2024-06-25 16:40:57">2024-06-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="git工具上传使用"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="使用-Git-工具上传项目到-GitHub"><a href="#使用-Git-工具上传项目到-GitHub" class="headerlink" title="使用 Git 工具上传项目到 GitHub"></a>使用 Git 工具上传项目到 GitHub</h3><ol>
+<li><p><strong>全局配置 GitHub 用户名和邮箱</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash复制代码git config --global user.name &quot;输入你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;输入你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>对本地项目文件夹初始化</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">复制代码</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>添加项目文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">复制代码</span><br><span class="line">添加项目文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看本地提交状态</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">复制代码</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>把文件提交到仓库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">复制代码</span><br><span class="line">git commit -m &quot;文件备注&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>连接远程仓库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">复制代码</span><br><span class="line">git remote add origin https://自己的仓库url地址</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>修改分支的名字</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">复制代码</span><br><span class="line">git branch -M main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>上传代码到 GitHub 仓库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">复制代码</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>GitHub 不再支持密码验证上传</strong></p>
+<ul>
+<li>remote: Support for password authentication was removed on August 13, 2021</li>
+<li>生成自己的 token，用来代替密码：<ul>
+<li>登录 GitHub -&gt; Settings -&gt; Developer settings -&gt; Generate new token</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="使用-IDEA-上传项目到-GitHub"><a href="#使用-IDEA-上传项目到-GitHub" class="headerlink" title="使用 IDEA 上传项目到 GitHub"></a>使用 IDEA 上传项目到 GitHub</h3><ol>
+<li><strong>进入 IDEA</strong><ul>
+<li>Settings – Version Control – Git，选择 Git 的安装路径为 bin 目录下的 git.exe 可执行文件</li>
+</ul>
+</li>
+<li><strong>选择左侧 Git 下方的 GitHub – Log In with Token</strong><ul>
+<li>将刚才生成的 token 粘贴进去以后 Add account</li>
+<li>成功后会看到自己的 account</li>
+</ul>
+</li>
+<li><strong>桌面右击，因为已经安装了 Git，所以应该会有个 Git Bash Here，点击它</strong></li>
+<li><strong>部署 GitHub 用户名和邮箱</strong><ul>
+<li>在用户文件夹下，应该会生成一个 .gitconfig 文件，用 Notepad++ 或者记事本打开查看是否有自己的 account 信息</li>
+</ul>
+</li>
+<li><strong>IDEA 打开你的项目，Git – GitHub – Share Project on GitHub</strong><ul>
+<li>点击 Share 等待成功即</li>
+</ul>
+</li>
+</ol>
+<h3 id="本地使用-Git-上传到-Gitee"><a href="#本地使用-Git-上传到-Gitee" class="headerlink" title="本地使用 Git 上传到 Gitee"></a>本地使用 Git 上传到 Gitee</h3><p>同上传 GitHub 基本相同。</p>
+<h3 id="使用-IDEA-上传项目到-Gitee"><a href="#使用-IDEA-上传项目到-Gitee" class="headerlink" title="使用 IDEA 上传项目到 Gitee"></a>使用 IDEA 上传项目到 Gitee</h3><ol>
+<li><strong>VCS -&gt; Import into Version Control -&gt; Create Git Repository</strong></li>
+<li><strong>选择要上传的项目</strong></li>
+<li><strong>鼠标右键项目 Git -&gt; Add 添加或者右上角 √ add</strong></li>
+<li><strong>鼠标右键项目 Git -&gt; Commit 或者右上角 √ commit</strong></li>
+<li><strong>可以看到项目结构，然后添加解释信息</strong></li>
+<li><strong>出现警告，忽略继续 commit</strong></li>
+<li><strong>到此，只是将项目提交到了本地仓库，还没有推到远端</strong></li>
+<li><strong>Push 操作，填写 Gitee 仓库 URL</strong></li>
+<li><strong>检查是否成功 修改为 .md 格式，不要动我的内容</strong></li>
+</ol>
+<p>通过以上步骤，你可以轻松地使用 Git 工具将项目上传到 GitHub 和 Gitee，并在 IDEA 中进行相关配置和操作。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/06/13/2023-6-13/">http://example.com/2023/06/13/2023-6-13/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/06/15/2023-6-16/" title="框架整合"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">框架整合</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/10/2023-6-10/" title="Hexo博客搭建指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Hexo博客搭建指南</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Git-%E5%B7%A5%E5%85%B7%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E5%88%B0-GitHub"><span class="toc-number">1.</span> <span class="toc-text">使用 Git 工具上传项目到 GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-IDEA-%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E5%88%B0-GitHub"><span class="toc-number">2.</span> <span class="toc-text">使用 IDEA 上传项目到 GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8-Git-%E4%B8%8A%E4%BC%A0%E5%88%B0-Gitee"><span class="toc-number">3.</span> <span class="toc-text">本地使用 Git 上传到 Gitee</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-IDEA-%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E5%88%B0-Gitee"><span class="toc-number">4.</span> <span class="toc-text">使用 IDEA 上传项目到 Gitee</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/24/2023-10-24/" title="常用sql语句总结">常用sql语句总结</a><time datetime="2023-10-23T16:00:00.000Z" title="Created 2023-10-24 00:00:00">2023-10-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/24/2023-7-24/" title="vue入门">vue入门</a><time datetime="2023-07-23T16:00:00.000Z" title="Created 2023-07-24 00:00:00">2023-07-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/22/2023-7-22/" title="docker容器">docker容器</a><time datetime="2023-07-21T16:00:00.000Z" title="Created 2023-07-22 00:00:00">2023-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/21/2023-7-21/" title="gatewawy网关">gatewawy网关</a><time datetime="2023-07-20T16:00:00.000Z" title="Created 2023-07-21 00:00:00">2023-07-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/13/2023-7-13/" title="erueka+nacos注册管理中心">erueka+nacos注册管理中心</a><time datetime="2023-07-12T16:00:00.000Z" title="Created 2023-07-13 00:00:00">2023-07-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
