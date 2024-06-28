@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CvDas | CvDas</title><meta name="author" content="wyj"><meta name="copyright" content="wyj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="logback  &lt;!-- name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义后，可以使“$&#123;&#125;”来使用变量。 --&gt; &lt;property name&#x3D;&quot;log.path&quot; value&#x3D;&quot;.&#x2F;data_capture_logs&quot;&#x2F;&gt;  &lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CvDas">
+<meta property="og:url" content="http://example.com/2024/06/28/2024-7-5-logbackxml/index.html">
+<meta property="og:site_name" content="CvDas">
+<meta property="og:description" content="logback  &lt;!-- name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义后，可以使“$&#123;&#125;”来使用变量。 --&gt; &lt;property name&#x3D;&quot;log.path&quot; value&#x3D;&quot;.&#x2F;data_capture_logs&quot;&#x2F;&gt;  &lt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-06-28T07:53:51.969Z">
+<meta property="article:modified_time" content="2024-06-28T07:54:20.886Z">
+<meta property="article:author" content="wyj">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/06/28/2024-7-5-logbackxml/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CvDas',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-06-28 15:54:20'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="CvDas"><img class="site-icon" src="https://img0.baidu.com/it/u=2917410030,281932851&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=708&amp;h=500"/><span class="site-name">CvDas</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-28T07:53:51.969Z" title="发表于 2024-06-28 15:53:51">2024-06-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-28T07:54:20.886Z" title="更新于 2024-06-28 15:54:20">2024-06-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><?xml version="1.0" encoding="UTF-8"?>
+<!-- 日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出 -->
+<!-- scan:当此属性设置为true时，配置文档如果发生改变，将会被重新加载，默认值为true -->
+<!-- scanPeriod:设置监测配置文档是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。
+                         当scan为true时，此属性生效。默认的时间间隔为1分钟。 -->
+<!-- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
+<configuration scan="true" scanPeriod="10 seconds">
+    <contextName>logback</contextName>
+
+<pre><code>&lt;!-- name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义后，可以使“$&#123;&#125;”来使用变量。 --&gt;
+&lt;property name=&quot;log.path&quot; value=&quot;./data_capture_logs&quot;/&gt;
+
+&lt;!--0. 日志格式和颜色渲染 --&gt;
+&lt;!-- 彩色日志依赖的渲染类 --&gt;
+&lt;conversionRule conversionWord=&quot;clr&quot; converterClass=&quot;org.springframework.boot.logging.logback.ColorConverter&quot;/&gt;
+&lt;conversionRule conversionWord=&quot;wex&quot;
+                converterClass=&quot;org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter&quot;/&gt;
+&lt;conversionRule conversionWord=&quot;wEx&quot;
+                converterClass=&quot;org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter&quot;/&gt;
+&lt;!-- 彩色日志格式 --&gt;
+&lt;property name=&quot;CONSOLE_LOG_PATTERN&quot;
+          value=&quot;$&#123;CONSOLE_LOG_PATTERN:-%clr(%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125;)&#123;faint&#125; %clr($&#123;LOG_LEVEL_PATTERN:-%5p&#125;) %clr($&#123;PID:- &#125;)&#123;magenta&#125; %clr(---)&#123;faint&#125; %clr([%15.15t])&#123;faint&#125; %clr(%-40.40logger&#123;39&#125;)&#123;cyan&#125; %clr(:)&#123;faint&#125; %m%n$&#123;LOG_EXCEPTION_CONVERSION_WORD:-%wEx&#125;&#125;&quot;/&gt;
+
+&lt;!--1. 输出到控制台--&gt;
+&lt;appender name=&quot;CONSOLE&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+    &lt;!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息--&gt;
+    &lt;filter class=&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;&gt;
+        &lt;level&gt;debug&lt;/level&gt;
+    &lt;/filter&gt;
+    &lt;encoder&gt;
+        &lt;Pattern&gt;$&#123;CONSOLE_LOG_PATTERN&#125;&lt;/Pattern&gt;
+        &lt;!-- 设置字符集 --&gt;
+        &lt;charset&gt;UTF-8&lt;/charset&gt;
+    &lt;/encoder&gt;
+&lt;/appender&gt;
+
+&lt;!--2. 输出到文档--&gt;
+&lt;!-- 2.1 level为 DEBUG 日志，时间滚动输出  --&gt;
+&lt;appender name=&quot;DEBUG_FILE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;!-- 正在记录的日志文档的路径及文档名 --&gt;
+    &lt;file&gt;$&#123;log.path&#125;/debug.log&lt;/file&gt;
+    &lt;!--日志文档输出格式--&gt;
+    &lt;encoder&gt;
+        &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n&lt;/pattern&gt;
+        &lt;charset&gt;UTF-8&lt;/charset&gt; &lt;!-- 设置字符集 --&gt;
+    &lt;/encoder&gt;
+    &lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;
+    &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;!-- 日志归档 --&gt;
+        &lt;fileNamePattern&gt;$&#123;log.path&#125;/app-debug-%d&#123;yyyy-MM-dd&#125;.%i.log&lt;/fileNamePattern&gt;
+        &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;
+        &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
+        &lt;!--日志文档保留天数--&gt;
+        &lt;maxHistory&gt;15&lt;/maxHistory&gt;
+    &lt;/rollingPolicy&gt;
+    &lt;!-- 此日志文档只记录debug级别的 --&gt;
+    &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;level&gt;debug&lt;/level&gt;
+        &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+        &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+    &lt;/filter&gt;
+&lt;/appender&gt;
+
+&lt;!-- 2.2 level为 INFO 日志，时间滚动输出  --&gt;
+&lt;appender name=&quot;INFO_FILE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;!-- 正在记录的日志文档的路径及文档名 --&gt;
+    &lt;file&gt;$&#123;log.path&#125;/info.log&lt;/file&gt;
+    &lt;!--日志文档输出格式--&gt;
+    &lt;encoder&gt;
+        &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n&lt;/pattern&gt;
+        &lt;charset&gt;UTF-8&lt;/charset&gt;
+    &lt;/encoder&gt;
+    &lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;
+    &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;!-- 每天日志归档路径以及格式 --&gt;
+        &lt;fileNamePattern&gt;$&#123;log.path&#125;/app-info-%d&#123;yyyy-MM-dd&#125;.%i.log&lt;/fileNamePattern&gt;
+        &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;
+        &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
+        &lt;!--日志文档保留天数--&gt;
+        &lt;maxHistory&gt;15&lt;/maxHistory&gt;
+    &lt;/rollingPolicy&gt;
+    &lt;!-- 此日志文档只记录info级别的 --&gt;
+    &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;level&gt;info&lt;/level&gt;
+        &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+        &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+    &lt;/filter&gt;
+&lt;/appender&gt;
+
+&lt;!-- 2.3 level为 WARN 日志，时间滚动输出  --&gt;
+&lt;appender name=&quot;WARN_FILE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;!-- 正在记录的日志文档的路径及文档名 --&gt;
+    &lt;file&gt;$&#123;log.path&#125;/warn.log&lt;/file&gt;
+    &lt;!--日志文档输出格式--&gt;
+    &lt;encoder&gt;
+        &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n&lt;/pattern&gt;
+        &lt;charset&gt;UTF-8&lt;/charset&gt; &lt;!-- 此处设置字符集 --&gt;
+    &lt;/encoder&gt;
+    &lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;
+    &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;fileNamePattern&gt;$&#123;log.path&#125;/app-warn-%d&#123;yyyy-MM-dd&#125;.%i.log&lt;/fileNamePattern&gt;
+        &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;
+        &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
+        &lt;!--日志文档保留天数--&gt;
+        &lt;maxHistory&gt;15&lt;/maxHistory&gt;
+    &lt;/rollingPolicy&gt;
+    &lt;!-- 此日志文档只记录warn级别的 --&gt;
+    &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;level&gt;warn&lt;/level&gt;
+        &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+        &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+    &lt;/filter&gt;
+&lt;/appender&gt;
+
+&lt;!-- 2.4 level为 ERROR 日志，时间滚动输出  --&gt;
+&lt;appender name=&quot;ERROR_FILE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;!-- 正在记录的日志文档的路径及文档名 --&gt;
+    &lt;file&gt;$&#123;log.path&#125;/error.log&lt;/file&gt;
+    &lt;!--日志文档输出格式--&gt;
+    &lt;encoder&gt;
+        &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n&lt;/pattern&gt;
+        &lt;charset&gt;UTF-8&lt;/charset&gt; &lt;!-- 此处设置字符集 --&gt;
+    &lt;/encoder&gt;
+    &lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;
+    &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;fileNamePattern&gt;$&#123;log.path&#125;/app-error-%d&#123;yyyy-MM-dd&#125;.%i.log&lt;/fileNamePattern&gt;
+        &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;
+        &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
+        &lt;!--日志文档保留天数--&gt;
+        &lt;maxHistory&gt;15&lt;/maxHistory&gt;
+    &lt;/rollingPolicy&gt;
+    &lt;!-- 此日志文档只记录ERROR级别的 --&gt;
+    &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;level&gt;ERROR&lt;/level&gt;
+        &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+        &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+    &lt;/filter&gt;
+&lt;/appender&gt;
+
+&lt;!--
+    &lt;logger&gt;用来设置某一个包或者具体的某一个类的日志打印级别、
+    以及指定&lt;appender&gt;。&lt;logger&gt;仅有一个name属性，
+    一个可选的level和一个可选的addtivity属性。
+    name:用来指定受此logger约束的某一个包或者具体的某一个类。
+    level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，
+          还有一个特殊值INHERITED或者同义词NULL，代表强制执行上级的级别。
+          如果未设置此属性，那么当前logger将会继承上级的级别。
+    addtivity:是否向上级logger传递打印信息。默认是true。
+    &lt;logger name=&quot;org.springframework.web&quot; level=&quot;info&quot;/&gt;
+    &lt;logger name=&quot;org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor&quot; level=&quot;INFO&quot;/&gt;
+--&gt;
+
+&lt;!--
+    使用mybatis的时候，sql语句是debug下才会打印，而这里我们只配置了info，所以想要查看sql语句的话，有以下两种操作：
+    第一种把&lt;root level=&quot;info&quot;&gt;改成&lt;root level=&quot;DEBUG&quot;&gt;这样就会打印sql，不过这样日志那边会出现很多其他消息
+    第二种就是单独给dao下目录配置debug模式，代码如下，这样配置sql语句会打印，其他还是正常info级别：
+    【logging.level.org.mybatis=debug logging.level.dao=debug】
+ --&gt;
+
+&lt;!--
+    root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性
+    level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，
+    不能设置为INHERITED或者同义词NULL。默认是DEBUG
+    可以包含零个或多个元素，标识这个appender将会添加到这个logger。
+--&gt;
+
+&lt;!-- 4. 最终的策略 --&gt;
+
+&lt;springProfile name=&quot;prod&quot;&gt;
+    &lt;root level=&quot;info&quot;&gt;
+        &lt;appender-ref ref=&quot;CONSOLE&quot;/&gt;
+        &lt;appender-ref ref=&quot;DEBUG_FILE&quot;/&gt;
+        &lt;appender-ref ref=&quot;INFO_FILE&quot;/&gt;
+        &lt;appender-ref ref=&quot;ERROR_FILE&quot;/&gt;
+        &lt;appender-ref ref=&quot;WARN_FILE&quot;/&gt;
+    &lt;/root&gt;
+&lt;/springProfile&gt;
+</code></pre>
+</configuration></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">wyj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/06/28/2024-7-5-logbackxml/">http://example.com/2024/06/28/2024-7-5-logbackxml/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">CvDas</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/06/29/2024-7-2%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">设计模式</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/28/2024-7-4-%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E5%BC%95%E5%85%A5/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">wyj</div><div class="author-info__description">Any code can be copied</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/29/2024-7-2%E5%B8%B8%E7%94%A8api/" title="常用api">常用api</a><time datetime="2024-06-28T16:00:00.000Z" title="发表于 2024-06-29 00:00:00">2024-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/29/2024-7-2%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">设计模式</a><time datetime="2024-06-28T16:00:00.000Z" title="发表于 2024-06-29 00:00:00">2024-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/28/2024-7-5-logbackxml/" title="无题">无题</a><time datetime="2024-06-28T07:53:51.969Z" title="发表于 2024-06-28 15:53:51">2024-06-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/28/2024-7-4-%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E5%BC%95%E5%85%A5/" title="无题">无题</a><time datetime="2024-06-28T06:38:50.312Z" title="发表于 2024-06-28 14:38:50">2024-06-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/06/2024-5-6-enum%E6%9E%9A%E4%B8%BE/" title="enum枚举">enum枚举</a><time datetime="2024-05-05T16:00:00.000Z" title="发表于 2024-05-06 00:00:00">2024-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By wyj</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
